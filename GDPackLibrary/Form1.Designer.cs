@@ -34,6 +34,9 @@ namespace GDPackLibrary
 		{
 			pictureBox2.BringToFront();
 			panel1.BringToFront();
+			//SelectionAnimTimer.Enabled = true;
+			//SelectionAnimTimer.Start();
+			pictureBox2.Location = new Point(309, 12);
 		}
 
 
@@ -52,6 +55,7 @@ namespace GDPackLibrary
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.SelectionAnimTimer = new System.Windows.Forms.Timer(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
@@ -103,12 +107,17 @@ namespace GDPackLibrary
 			// 
 			this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox2.Image = global::GDPackLibrary.Properties.Resources.Logogdtpm_shortened;
-			this.pictureBox2.Location = new System.Drawing.Point(309, 8);
+			this.pictureBox2.Location = new System.Drawing.Point(309, -93);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(339, 93);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox2.TabIndex = 6;
 			this.pictureBox2.TabStop = false;
+			// 
+			// SelectionAnimTimer
+			// 
+			this.SelectionAnimTimer.Interval = 1;
+			this.SelectionAnimTimer.Tick += new System.EventHandler(this.SAT_Tick);
 			// 
 			// Form1
 			// 
@@ -143,6 +152,7 @@ namespace GDPackLibrary
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.PictureBox pictureBox2;
+		private System.Windows.Forms.Timer SelectionAnimTimer;
 	}
 }
 

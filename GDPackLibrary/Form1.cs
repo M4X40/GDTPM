@@ -30,6 +30,7 @@ namespace GDPackLibrary
 			if (amount == 0 || amount == 4)
 			{
 				label2.Text = "Loading.";
+				skiploading();
 			}
 			else if (amount == 1 || amount == 5)
 			{
@@ -117,7 +118,7 @@ namespace GDPackLibrary
 				this.Text = "GD Pack Library";
 			}
 			label2.Location = new Point((this.Width / 2) - (label2.Width / 2), (this.Height / 2) - (label2.Height / 2) - 27);
-			Console.WriteLine(amount);
+			//Console.WriteLine(amount);
 
 		}
 		private void Form1_Load(object sender, EventArgs e)
@@ -127,6 +128,31 @@ namespace GDPackLibrary
 		private void Form1_ResizeEnd(object sender, EventArgs e)
 		{
 			label2.Location = new Point((this.Width / 2) - (label2.Width / 2), (this.Height / 2) - (label2.Height / 2) - 27);
+		}
+
+		int SATticker = -93;
+
+		private void SAT_Tick(object sender, EventArgs e)
+		{
+			SATticker++;
+			if (SelectionAnimTimer.Interval > 1)
+			{
+				SelectionAnimTimer.Interval--;
+			} 
+			if (pictureBox2.Location.Y < 12)
+			{
+				pictureBox2.Location = new Point(309, SATticker);
+			} else
+			{
+				SelectionAnimTimer.Stop();
+			}
+			
+		}
+
+		private void skiploading()
+		{
+			amount = 21;
+			LoadingTimer.Interval = 50;
 		}
 	}
 }
