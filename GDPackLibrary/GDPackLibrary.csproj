@@ -80,7 +80,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Logogdtpm_shortened.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\LoadingGradient.png" />
   </ItemGroup>

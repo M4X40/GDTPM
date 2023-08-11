@@ -102,6 +102,10 @@ namespace GDPackLibrary
 			{
 				label2.Text = "";
 				label2.Visible = false;
+			}
+			else if (amount == 30)
+			{
+				CreateSelectionMenu();
 				LoadingTimer.Stop();
 			}
 			amount += 1;
@@ -113,6 +117,7 @@ namespace GDPackLibrary
 				this.Text = "GD Pack Library";
 			}
 			label2.Location = new Point((this.Width / 2) - (label2.Width / 2), (this.Height / 2) - (label2.Height / 2) - 27);
+			Console.WriteLine(amount);
 
 		}
 		private void Form1_Load(object sender, EventArgs e)
